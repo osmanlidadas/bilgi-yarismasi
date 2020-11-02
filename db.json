@@ -1,0 +1,112 @@
+[
+  {
+    "id": 1,
+    "soru_koku": "2010 yılında ülkemizde düzenlenen kış olimpiyatları hangi şehirde yapılmıştır?",
+    "cevap": "C",
+    "secenekler": [
+      {"secenek":"A","cevap": "Van"},
+      {"secenek":"B","cevap": "Kayseri"},
+      {"secenek":"C","cevap": "Erzurum"},
+      {"secenek":"D","cevap": "Trabzon"}
+    ]
+  },
+  {
+    "id": 2,
+    "soru_koku": "Fatih Sultan Mehmet’in babası kimdir?",
+    "cevap": "B",
+    "secenekler": [
+      {"secenek":"A","cevap": "I. Mehmet"},
+      {"secenek":"B","cevap": "II. Murat"},
+      {"secenek":"C","cevap": "Yıldırım Beyazıt"},
+      {"secenek":"D","cevap": "Yavuz Sultan Selim"}
+    ]
+  },
+  {
+    "id": 3,
+    "soru_koku": "Hangisi tarihteki Türk devletlerinden biri değildir?",
+    "cevap": "A",
+    "secenekler": [
+      {"secenek":"A","cevap": "Emevi Devleti"},
+      {"secenek":"B","cevap": "Avar Kağanlığı"},
+      {"secenek":"C","cevap": "Hun İmparatorluğu"},
+      {"secenek":"D","cevap": "Uygur Devleti"}
+    ]
+  },
+  {
+    "id": 4,
+    "soru_koku": "Kıbrıs Barış harekatı hangi tarihte gerçekleşmiştir?",
+    "cevap": "C",
+    "secenekler": [
+      {"secenek":"A","cevap": "1970"},
+      {"secenek":"B","cevap": "1972"},
+      {"secenek":"C","cevap": "1974"},
+      {"secenek":"D","cevap": "1976"}
+    ]
+  },
+  {
+    "id": 5,
+    "soru_koku": "Tarihçilerin Kutbu olarak bilinen dünyaca ünlü tarihçimiz kimdir?",
+    "cevap": "D",
+    "secenekler": [
+      {"secenek":"A","cevap": "Aziz Sancar"},
+      {"secenek":"B","cevap": "Mehmet Fuat Köprülü"},
+      {"secenek":"C","cevap": "İlber Ortaylı"},
+      {"secenek":"D","cevap": "Halil İnalcık"}
+    ]
+  },
+  {
+    "id": 6,
+    "soru_koku": "Kuyucaklı Yusuf adlı eser kime aittir?",
+    "cevap": "B",
+    "secenekler": [
+      {"secenek":"A","cevap": "Yusuf Atılgan"},
+      {"secenek":"B","cevap": "Sabahattin Ali"},
+      {"secenek":"C","cevap": "Yaşar Kemal"},
+      {"secenek":"D","cevap": "Nazım Hikmet"}
+    ]
+  },
+  {
+    "id": 7,
+    "soru_koku": "İstiklal Marşı hangi yıl yazılmıştır?",
+    "cevap": "B",
+    "secenekler": [
+      {"secenek":"A","cevap": "1920"},
+      {"secenek":"B","cevap": "1921"},
+      {"secenek":"C","cevap": "1922"},
+      {"secenek":"D","cevap": "1923"}
+    ]
+  },
+  {
+    "id": 8,
+    "soru_koku": "Mimar Sinan'ın Ustalık Dönemi eseri sayılan Edirne'deki eserinin adı nedir?",
+    "cevap": "C",
+    "secenekler": [
+      {"secenek":"A","cevap": "Mecidiye"},
+      {"secenek":"B","cevap": "Hamidiye"},
+      {"secenek":"C","cevap": "Selimiye"},
+      {"secenek":"D","cevap": "Süleymaniye"}
+    ]
+  },
+  {
+    "id": 9,
+    "soru_koku": "Pusulada ( N ) harfi hangi yönü ifade eder ?",
+    "cevap": "C",
+    "secenekler": [
+      {"secenek":"A","cevap": "Doğu"},
+      {"secenek":"B","cevap": "Batı"},
+      {"secenek":"C","cevap": "Kuzey"},
+      {"secenek":"D","cevap": "Güney"}
+    ]
+  },
+  {
+    "id": 10,
+    "soru_koku": "İlk Türk denizci kimdir ?",
+    "cevap": "D",
+    "secenekler": [
+      {"secenek":"A","cevap": "Piri Reis"},
+      {"secenek":"B","cevap": "Oruç Reis"},
+      {"secenek":"C","cevap": "Ali Bey"},
+      {"secenek":"D","cevap": "Çaka Bey"}
+    ]
+  }
+]

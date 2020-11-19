@@ -1,102 +1,55 @@
 <template>
-<b-container>
+<b-container class="mb-5">
     <b-row>
+
         <b-card class="col-12 shadow mt-5" v-if="!basladi">
             <b-button variant="danger" size="sm" @click="yarismayiBaslat()">
                 <b-icon icon="play-fill" aria-hidden="true"></b-icon>
                 Yarışmaya Başla
             </b-button>
-            <div class="float-right" v-if="dogru > 0 || yanlis > 0">
-                Doğru: {{ dogru }} - Yanlış: {{ yanlis }}
+            <div class="float-right" v-if="dogruSayisi > 0 || yanlisSayisi > 0">
+                Doğru: {{ dogruSayisi }} - Yanlış: {{ yanlisSayisi }}
             </div>
-            <SonucTable :dogru="dogru" :yanlis="yanlis" :sonuc="sonuc" />
+            <SonucTable />
         </b-card>
 
-        <b-card class="col-12 shadow mt-5" v-if="basladi">
-            <b-card-header>Soru {{ soruno }}
-                <div class="float-right">
-                    Doğru: {{ dogru }} - Yanlış: {{ yanlis }}
-                </div>
-            </b-card-header>
-            <b-card-body>
-                {{ soru.soru_koku }} {{ soru.cevap }}
-                <br />
+        <Soru />
 
-                <b-button class="mr-2 mt-2" @click="cevapVer(sec.secenek)" v-for="sec in soru.secenekler" :key="sec.id" variant="outline-primary">{{ sec.cevap }}
-                </b-button>
-            </b-card-body>
-            <div class="float-right bottom-row">
-                <b-button class="mr-2 mt-2" @click="sinaviBitir()" variant="danger">
-                    <b-icon icon="power" aria-hidden="true"></b-icon>
-                    Bitir
-                </b-button>
-            </div>
-        </b-card>
     </b-row>
 </b-container>
 </template>
 
 <script>
 import SonucTable from "./SonucTable";
-
+import Soru from "./Soru";
+import {mapGetters} from 'vuex'
 export default {
     components: {
+        Soru,
         SonucTable,
     },
     data() {
-        return {
-            sorular: [],
-            soru: [],
-            basladi: false,
-            soruno: 1,
-            dogru: 0,
-            yanlis: 0,
-            sonuc: [],
-        };
+        return {};
     },
+    computed: mapGetters([
+        'basladi',
+        'dogruSayisi',
+        'yanlisSayisi',
+        'tumSorular'
+    ]),
     methods: {
         yarismayiBaslat() {
-            this.dogru = 0;
-            this.yanlis = 0;
-            this.soruno = 1;
-            this.sonuc = [];
-            this.basladi = !this.basladi;
-            this.soru = this.sorular[this.soruno - 1]; //indis numarası 0 dan başladığı için -1 kullanıyoruz.
-        },
-        cevapVer(v) {
-            let dogru = this.soru.cevap;
-            let cevap = v;
-
-            //verilen cevapları kaydet
-            let item = {
-                soru_koku: this.soru.soru_koku,
-                dogru_cevap: this.soru.cevap,
-                verilen_cevap: v,
-            };
-            this.sonuc.push(item);
-
-            //doğru yanlış sayılarını hesapla
-            dogru === cevap ? this.dogru++ : this.yanlis++;
-
-            //son soru değil ise soru numarasını artır
-            if (this.soruno < this.sorular.length) {
-                this.soruno++;
-            } else {
-                //son soru ise bitir
-                this.basladi = false;
-            }
-            //yeni soruyu getir
-            this.soru = this.sorular[this.soruno - 1];
-        },
-        sinaviBitir() {
-            this.basladi = !this.basladi;
-        },
+            this.$store.dispatch('dogruYanlisSifirla');
+            this.$store.dispatch('sonucuTemizle');
+            this.$store.dispatch('yarismaBaslamaDurumu', !this.basladi);
+            this.$store.dispatch('soruGetir', this.tumSorular[0]); //ilk soru
+        }
     },
     created() {
-        fetch("/db.json")
+        fetch("http://localhost:49230/api/sorular")
             .then((r) => r.json())
             .then((data) => {
-                this.sorular = data;
+                this.$store.dispatch('tumSorular', data);
             });
     },
 };
